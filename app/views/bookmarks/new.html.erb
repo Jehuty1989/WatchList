@@ -1,8 +1,8 @@
 <div class="container col-6">
   <h3>Add a movie to list <%= @list.name %></h3>
   <%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :movie_id, collection: @movies.map, include_blank: false %>
   <%= f.input :comment %>
-  <%= f.input :movie_id, collection: @movies.map{ |m| m.id } %>
   <%= f.submit %>
   <% end %>
 </div>
